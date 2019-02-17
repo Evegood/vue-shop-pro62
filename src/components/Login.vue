@@ -45,9 +45,7 @@ export default {
           // required:非空 message:错误提示 trigger:触发校验机制
           { required: true, message: '请输入用户名', trigger: 'blur' }
         ],
-        password: [
-          { required: true, message: '请输入密码', trigger: 'blur' }
-        ]
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
       }
     }
   },
@@ -62,7 +60,7 @@ export default {
           // 用户信息真实性校验
           // axios呆着用户信息去到后端数据库校验
           const { data: res } = await this.$http.post('/login', this.loginForm)
-          
+
           // 判断用户名或密码 真实性校验失败
           if (res.meta.status !== 200) {
             return this.$message.error('用户名或密码不存在')
